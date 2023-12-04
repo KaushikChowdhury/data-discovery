@@ -1,2 +1,4 @@
-\Misc
-__pycache__
+/Misc
+frontend/application/api/__pycache__/
+../__pycache__/
+__pycache__/
