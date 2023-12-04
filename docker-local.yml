@@ -1,0 +1,29 @@
+version: '3'
+services:
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j_data-discovery
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/test
+    volumes:
+      - ./example/docker/neo4j/conf:/var/lib/neo4j/conf
+      - ./.local/neo4j/data:/data
+    networks:
+      - celebalnet
+
+  elasticsearch:
+    image: elasticsearch:8.11.1
+    container_name: esearch_data-discovery
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    networks:
+      - celebalnet
+
+networks:
+  celebalnet:
