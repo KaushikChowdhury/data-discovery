@@ -2,3 +2,6 @@
 frontend/application/api/__pycache__/
 ../__pycache__/
 __pycache__/
+DataDiscovery.egg-info/
+build/
+dist/DataDiscovery-0.0.1.tar.gz

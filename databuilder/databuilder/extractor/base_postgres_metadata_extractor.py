@@ -5,7 +5,6 @@ from collections import namedtuple
 from pyhocon import ConfigTree, ConfigFactory
 from databuilder import Scoped
 from databuilder.extractor.base_extractor import Extractor
-from databuilder.models.table_metadata import ColumnMetadata, TableMetadata
 
 LOGGER = logging.getLogger(__name__)
 
@@ -36,5 +35,6 @@ class BasePostgresMetadataExtractor:
 
     def init(self, conf: ConfigTree) -> None:
         conf= conf.with_fallback(BasePostgresMetadataExtractor.DEFAULT_CONFIG)
+
 
 
